@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "holamundo";
+option java_outer_classname = "HolaMundoProto";
+
+package holamundo;
+
+// Definición de los métodos.
+service Saludar {
+  // Envía un saludo
+  rpc DecirHola (HolaRequest) returns (HolaReply) {}
+}
+
+// La petición tiene el nombre del usuario.
+message HolaRequest {
+  string name = 1;
+}
+
+// La respuesta contiene el saludo
+message HolaReply {
+  string message = 1;
+}
