@@ -17,7 +17,7 @@ import static io.grpc.stub.ServerCalls.asyncUnimplementedUnaryCall;
 
 /**
  * <pre>
- * DefiniciÛn de los mÈtodos.
+ * Definici√≥n de los m√©todos.
  * </pre>
  */
 @javax.annotation.Generated(
@@ -27,38 +27,69 @@ public final class SaludarGrpc {
 
   private SaludarGrpc() {}
 
-  public static final String SERVICE_NAME = "holamundo.Saludar";
+  public static final String SERVICE_NAME = "Saludar";
 
   // Static method descriptors that strictly reflect the proto.
-  private static volatile io.grpc.MethodDescriptor<holamundo.HolaRequest,
-      holamundo.HolaReply> getDecirHolaMethod;
+  private static volatile io.grpc.MethodDescriptor<holamundo.Holamundo.MsgRequest,
+      holamundo.Holamundo.MsgResponse> getDecirHolaMethod;
 
   @io.grpc.stub.annotations.RpcMethod(
       fullMethodName = SERVICE_NAME + '/' + "DecirHola",
-      requestType = holamundo.HolaRequest.class,
-      responseType = holamundo.HolaReply.class,
+      requestType = holamundo.Holamundo.MsgRequest.class,
+      responseType = holamundo.Holamundo.MsgResponse.class,
       methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
-  public static io.grpc.MethodDescriptor<holamundo.HolaRequest,
-      holamundo.HolaReply> getDecirHolaMethod() {
-    io.grpc.MethodDescriptor<holamundo.HolaRequest, holamundo.HolaReply> getDecirHolaMethod;
+  public static io.grpc.MethodDescriptor<holamundo.Holamundo.MsgRequest,
+      holamundo.Holamundo.MsgResponse> getDecirHolaMethod() {
+    io.grpc.MethodDescriptor<holamundo.Holamundo.MsgRequest, holamundo.Holamundo.MsgResponse> getDecirHolaMethod;
     if ((getDecirHolaMethod = SaludarGrpc.getDecirHolaMethod) == null) {
       synchronized (SaludarGrpc.class) {
         if ((getDecirHolaMethod = SaludarGrpc.getDecirHolaMethod) == null) {
           SaludarGrpc.getDecirHolaMethod = getDecirHolaMethod =
-              io.grpc.MethodDescriptor.<holamundo.HolaRequest, holamundo.HolaReply>newBuilder()
+              io.grpc.MethodDescriptor.<holamundo.Holamundo.MsgRequest, holamundo.Holamundo.MsgResponse>newBuilder()
               .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
               .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DecirHola"))
               .setSampledToLocalTracing(true)
               .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  holamundo.HolaRequest.getDefaultInstance()))
+                  holamundo.Holamundo.MsgRequest.getDefaultInstance()))
               .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
-                  holamundo.HolaReply.getDefaultInstance()))
+                  holamundo.Holamundo.MsgResponse.getDefaultInstance()))
               .setSchemaDescriptor(new SaludarMethodDescriptorSupplier("DecirHola"))
               .build();
         }
       }
     }
     return getDecirHolaMethod;
+  }
+
+  private static volatile io.grpc.MethodDescriptor<holamundo.Holamundo.MsgRequest,
+      holamundo.Holamundo.MsgResponse> getDecirChaoMethod;
+
+  @io.grpc.stub.annotations.RpcMethod(
+      fullMethodName = SERVICE_NAME + '/' + "DecirChao",
+      requestType = holamundo.Holamundo.MsgRequest.class,
+      responseType = holamundo.Holamundo.MsgResponse.class,
+      methodType = io.grpc.MethodDescriptor.MethodType.UNARY)
+  public static io.grpc.MethodDescriptor<holamundo.Holamundo.MsgRequest,
+      holamundo.Holamundo.MsgResponse> getDecirChaoMethod() {
+    io.grpc.MethodDescriptor<holamundo.Holamundo.MsgRequest, holamundo.Holamundo.MsgResponse> getDecirChaoMethod;
+    if ((getDecirChaoMethod = SaludarGrpc.getDecirChaoMethod) == null) {
+      synchronized (SaludarGrpc.class) {
+        if ((getDecirChaoMethod = SaludarGrpc.getDecirChaoMethod) == null) {
+          SaludarGrpc.getDecirChaoMethod = getDecirChaoMethod =
+              io.grpc.MethodDescriptor.<holamundo.Holamundo.MsgRequest, holamundo.Holamundo.MsgResponse>newBuilder()
+              .setType(io.grpc.MethodDescriptor.MethodType.UNARY)
+              .setFullMethodName(generateFullMethodName(SERVICE_NAME, "DecirChao"))
+              .setSampledToLocalTracing(true)
+              .setRequestMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  holamundo.Holamundo.MsgRequest.getDefaultInstance()))
+              .setResponseMarshaller(io.grpc.protobuf.ProtoUtils.marshaller(
+                  holamundo.Holamundo.MsgResponse.getDefaultInstance()))
+              .setSchemaDescriptor(new SaludarMethodDescriptorSupplier("DecirChao"))
+              .build();
+        }
+      }
+    }
+    return getDecirChaoMethod;
   }
 
   /**
@@ -107,19 +138,29 @@ public final class SaludarGrpc {
 
   /**
    * <pre>
-   * DefiniciÛn de los mÈtodos.
+   * Definici√≥n de los m√©todos.
    * </pre>
    */
   public static abstract class SaludarImplBase implements io.grpc.BindableService {
 
     /**
      * <pre>
-     * EnvÌa un saludo
+     * Env√≠a un saludo
      * </pre>
      */
-    public void decirHola(holamundo.HolaRequest request,
-        io.grpc.stub.StreamObserver<holamundo.HolaReply> responseObserver) {
+    public void decirHola(holamundo.Holamundo.MsgRequest request,
+        io.grpc.stub.StreamObserver<holamundo.Holamundo.MsgResponse> responseObserver) {
       asyncUnimplementedUnaryCall(getDecirHolaMethod(), responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Env√≠a una despedida
+     * </pre>
+     */
+    public void decirChao(holamundo.Holamundo.MsgRequest request,
+        io.grpc.stub.StreamObserver<holamundo.Holamundo.MsgResponse> responseObserver) {
+      asyncUnimplementedUnaryCall(getDecirChaoMethod(), responseObserver);
     }
 
     @java.lang.Override public final io.grpc.ServerServiceDefinition bindService() {
@@ -128,16 +169,23 @@ public final class SaludarGrpc {
             getDecirHolaMethod(),
             asyncUnaryCall(
               new MethodHandlers<
-                holamundo.HolaRequest,
-                holamundo.HolaReply>(
+                holamundo.Holamundo.MsgRequest,
+                holamundo.Holamundo.MsgResponse>(
                   this, METHODID_DECIR_HOLA)))
+          .addMethod(
+            getDecirChaoMethod(),
+            asyncUnaryCall(
+              new MethodHandlers<
+                holamundo.Holamundo.MsgRequest,
+                holamundo.Holamundo.MsgResponse>(
+                  this, METHODID_DECIR_CHAO)))
           .build();
     }
   }
 
   /**
    * <pre>
-   * DefiniciÛn de los mÈtodos.
+   * Definici√≥n de los m√©todos.
    * </pre>
    */
   public static final class SaludarStub extends io.grpc.stub.AbstractAsyncStub<SaludarStub> {
@@ -154,19 +202,30 @@ public final class SaludarGrpc {
 
     /**
      * <pre>
-     * EnvÌa un saludo
+     * Env√≠a un saludo
      * </pre>
      */
-    public void decirHola(holamundo.HolaRequest request,
-        io.grpc.stub.StreamObserver<holamundo.HolaReply> responseObserver) {
+    public void decirHola(holamundo.Holamundo.MsgRequest request,
+        io.grpc.stub.StreamObserver<holamundo.Holamundo.MsgResponse> responseObserver) {
       asyncUnaryCall(
           getChannel().newCall(getDecirHolaMethod(), getCallOptions()), request, responseObserver);
+    }
+
+    /**
+     * <pre>
+     * Env√≠a una despedida
+     * </pre>
+     */
+    public void decirChao(holamundo.Holamundo.MsgRequest request,
+        io.grpc.stub.StreamObserver<holamundo.Holamundo.MsgResponse> responseObserver) {
+      asyncUnaryCall(
+          getChannel().newCall(getDecirChaoMethod(), getCallOptions()), request, responseObserver);
     }
   }
 
   /**
    * <pre>
-   * DefiniciÛn de los mÈtodos.
+   * Definici√≥n de los m√©todos.
    * </pre>
    */
   public static final class SaludarBlockingStub extends io.grpc.stub.AbstractBlockingStub<SaludarBlockingStub> {
@@ -183,18 +242,28 @@ public final class SaludarGrpc {
 
     /**
      * <pre>
-     * EnvÌa un saludo
+     * Env√≠a un saludo
      * </pre>
      */
-    public holamundo.HolaReply decirHola(holamundo.HolaRequest request) {
+    public holamundo.Holamundo.MsgResponse decirHola(holamundo.Holamundo.MsgRequest request) {
       return blockingUnaryCall(
           getChannel(), getDecirHolaMethod(), getCallOptions(), request);
+    }
+
+    /**
+     * <pre>
+     * Env√≠a una despedida
+     * </pre>
+     */
+    public holamundo.Holamundo.MsgResponse decirChao(holamundo.Holamundo.MsgRequest request) {
+      return blockingUnaryCall(
+          getChannel(), getDecirChaoMethod(), getCallOptions(), request);
     }
   }
 
   /**
    * <pre>
-   * DefiniciÛn de los mÈtodos.
+   * Definici√≥n de los m√©todos.
    * </pre>
    */
   public static final class SaludarFutureStub extends io.grpc.stub.AbstractFutureStub<SaludarFutureStub> {
@@ -211,17 +280,29 @@ public final class SaludarGrpc {
 
     /**
      * <pre>
-     * EnvÌa un saludo
+     * Env√≠a un saludo
      * </pre>
      */
-    public com.google.common.util.concurrent.ListenableFuture<holamundo.HolaReply> decirHola(
-        holamundo.HolaRequest request) {
+    public com.google.common.util.concurrent.ListenableFuture<holamundo.Holamundo.MsgResponse> decirHola(
+        holamundo.Holamundo.MsgRequest request) {
       return futureUnaryCall(
           getChannel().newCall(getDecirHolaMethod(), getCallOptions()), request);
+    }
+
+    /**
+     * <pre>
+     * Env√≠a una despedida
+     * </pre>
+     */
+    public com.google.common.util.concurrent.ListenableFuture<holamundo.Holamundo.MsgResponse> decirChao(
+        holamundo.Holamundo.MsgRequest request) {
+      return futureUnaryCall(
+          getChannel().newCall(getDecirChaoMethod(), getCallOptions()), request);
     }
   }
 
   private static final int METHODID_DECIR_HOLA = 0;
+  private static final int METHODID_DECIR_CHAO = 1;
 
   private static final class MethodHandlers<Req, Resp> implements
       io.grpc.stub.ServerCalls.UnaryMethod<Req, Resp>,
@@ -241,8 +322,12 @@ public final class SaludarGrpc {
     public void invoke(Req request, io.grpc.stub.StreamObserver<Resp> responseObserver) {
       switch (methodId) {
         case METHODID_DECIR_HOLA:
-          serviceImpl.decirHola((holamundo.HolaRequest) request,
-              (io.grpc.stub.StreamObserver<holamundo.HolaReply>) responseObserver);
+          serviceImpl.decirHola((holamundo.Holamundo.MsgRequest) request,
+              (io.grpc.stub.StreamObserver<holamundo.Holamundo.MsgResponse>) responseObserver);
+          break;
+        case METHODID_DECIR_CHAO:
+          serviceImpl.decirChao((holamundo.Holamundo.MsgRequest) request,
+              (io.grpc.stub.StreamObserver<holamundo.Holamundo.MsgResponse>) responseObserver);
           break;
         default:
           throw new AssertionError();
@@ -266,7 +351,7 @@ public final class SaludarGrpc {
 
     @java.lang.Override
     public com.google.protobuf.Descriptors.FileDescriptor getFileDescriptor() {
-      return holamundo.HolaMundoProto.getDescriptor();
+      return holamundo.Holamundo.getDescriptor();
     }
 
     @java.lang.Override
@@ -306,6 +391,7 @@ public final class SaludarGrpc {
           serviceDescriptor = result = io.grpc.ServiceDescriptor.newBuilder(SERVICE_NAME)
               .setSchemaDescriptor(new SaludarFileDescriptorSupplier())
               .addMethod(getDecirHolaMethod())
+              .addMethod(getDecirChaoMethod())
               .build();
         }
       }
